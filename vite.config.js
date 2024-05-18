@@ -6,14 +6,14 @@ export default {
   },
   server: {
     cors: {
-      origin: "http://localhost:8000"
+      origin: "http://37.187.181.98"
     },    
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "http://localhost:8803",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
@@ -22,7 +22,7 @@ export default {
   },
   preview:{
     cors: {
-        origin: "http://localhost:8000"
+        origin: "http://37.187.181.98"
     },  
     headers: {
       "Access-Control-Allow-Origin": "*",
