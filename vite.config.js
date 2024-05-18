@@ -12,10 +12,10 @@ export default {
       "Access-Control-Allow-Origin": "*",
     },
     proxy: {
-      "/api": {
+      "/juavaal2-api": {
         target: "http://localhost:8803",
-        changeOrigin: true,
-        secure: false,
+        changeOrigin: false,
+        secure: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
