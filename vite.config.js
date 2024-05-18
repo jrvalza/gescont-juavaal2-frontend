@@ -14,7 +14,7 @@ export default {
     proxy: {
       "/juavaal2-api": {
         target: "http://37.187.181.98",
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
         rewrite: (path) => path.replace(/^\/juavaal2-api/, ""),
       },
