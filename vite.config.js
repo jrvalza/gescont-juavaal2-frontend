@@ -6,23 +6,23 @@ export default {
   },
   server: {
     cors: {
-      origin: "https://37.187.181.98"
+      origin: "https://vps-3206e74d.vps.ovh.net"
     },    
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     proxy: {
-      "/juavaal2-api": {
-        target: "https://37.187.181.98",
-        changeOrigin: false,
+      "/api": {
+        target: "https://vps-3206e74d.vps.ovh.net",
+        changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/juavaal2-api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
   preview:{
     cors: {
-        origin: "https://37.187.181.98"
+        origin: "https://vps-3206e74d.vps.ovh.net"
     },  
     headers: {
       "Access-Control-Allow-Origin": "*",
