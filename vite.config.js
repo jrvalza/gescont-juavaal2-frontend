@@ -1,5 +1,4 @@
 
-import { URL_API } from './js/settings';
 
 export default {
   build: {
@@ -7,14 +6,14 @@ export default {
   },
   server: {
     cors: {
-      origin: URL_API
+      origin: "http://localhost:8000"
     },    
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     proxy: {
       "/api": {
-        target: URL_API,
+        target: "http://localhost:8000",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
@@ -23,7 +22,7 @@ export default {
   },
   preview:{
     cors: {
-        origin: URL_API
+        origin: "http://localhost:8000"
     },  
     headers: {
       "Access-Control-Allow-Origin": "*",

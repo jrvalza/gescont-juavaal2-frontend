@@ -5,8 +5,8 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "publish-first-time-on-local": "vite build --base=http://localhost/midominio.com/website-juavaal2/ && cp -R dist /var/www/html/midominio.com/website-juavaal2",
-    "publish-on-local": "vite build --base=http://localhost/midominio.com/website-juavaal2/ && rm -R /var/www/html/midominio.com/website-juavaal2 && cp -R dist /var/www/html/midominio.com/website-juavaal2"
+    "publish-first-time-on-local": "vite build --base=http://localhost/website-juavaal2/ && cp -R dist /var/www/html/website-juavaal2",
+    "publish-on-local": "vite build --base=http://localhost/website-juavaal2/ && rm -R /var/www/html/website-juavaal2 && cp -R dist /var/www/html/website-juavaal2"
   },
   "devDependencies": {
     "vite": "^5.2.11"
