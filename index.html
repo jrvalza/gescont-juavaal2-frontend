@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web develop</title>
+  </head>
+  <body>
+    <div class="container-exterior">
+      <div class="container-interior">
+
+        <form id="form-login" onsubmit="event.preventDefault();">
+          <!-- Prevent default avoids the form be sent on pressing a form button
+          This is necessary because we want on click a button
+           -->
+          <p>Please provide your credentials:</p>
+          
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required minlength="4" maxlength="50" size="50" value="admin">
+          <br>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required minlength="4" maxlength="50" size="50" value="admin">
+          <br>
+          
+           <p id="form-login-message"></p>
+          <br><br>
+          <div class="form-login-button-container">
+            <button id="button-login">Login</button>
+            <button id="button-logout">Logout</button>
+          </div>
+        </form>
+
+
+        <hr>
+
+
+        <h3>Tabla People</h3>
+        <form id="form-people" onsubmit="event.preventDefault();">
+          <!-- Prevent default avoids the form be sent on pressing a
+          form button
+          This is necessary because we want on click a button
+          -->
+          DNI:<br>
+          <input type="text" id="form-people-dni" name = "dni" size="100" value="100"><br>
+          NOMBRE:<br>
+          <textarea rows="2" cols="100" id="form-people-nombre" name="nombre"> Juan </textarea><br>
+          APELLIDO:<br>
+          <textarea rows="2" cols="100" id="form-people-apellido" name="apellido"> Valencia </textarea><br>
+          PROFESION:<br>
+          <textarea rows="2" cols="100" id="form-people-profesion" name="profesion"> Topografo </textarea><br>
+          CIUDAD:<br>
+          <textarea rows="2" cols="100" id="form-people-ciudad" name="apellido"> Valencia </textarea><br>
+
+
+          <pre id="form-people-message">Message: </pre>
+          <div class="form-people-button-container">
+            <button id="button-people-insert">Insert</button>
+            <button id="button-people-update">Update</button>
+            <button id="button-people-delete">Delete</button>
+            <button id="button-people-select">Select</button>
+          </div>
+        </form>
+
+
+        <hr>
+
+
+        <h3>Tabla Streets</h3>
+        <form id="form-streets" onsubmit="event.preventDefault();">
+          <!-- Prevent default avoids the form be sent on pressing a
+          form button
+          This is necessary because we want on click a button
+          -->
+          GID:<br>
+          <input type="text" id="form-streets-gid" name = "gid" size="100" value="1"><br>
+          NOMBRE:<br>
+          <textarea rows="2" cols="100" id="form-streets-nombre" name="nombre"> Viver </textarea><br>
+          TIPO:<br>
+          <textarea rows="2" cols="100" id="form-streets-tipo" name="tipo"> Calle </textarea><br>
+          NÚMERO DE CARRILES:<br>
+          <textarea rows="2" cols="100" id="form-streets-ncarril" name="ncarril"> 2 </textarea><br>
+          GEOMETRIA WKT:<br>
+          <textarea rows="2" cols="100" id="form-streets-geomWkt" name="geomWkt"> LINESTRING(10 10, 1000 1000) </textarea><br>
+
+          <pre id="form-streets-message">Message: </pre>
+          <div class="form-streets-button-container">
+            <button id="button-streets-insert">Insert</button>
+            <button id="button-streets-update">Update</button>
+            <button id="button-streets-delete">Delete</button>
+            <button id="button-streets-select">Select</button>
+          </div>
+        </form>
+        
+        
+        <hr>
+
+
+        <h3>Tabla Parks</h3>
+        <form id="form-parks" onsubmit="event.preventDefault();">
+          <!-- Prevent default avoids the form be sent on pressing a
+          form button
+          This is necessary because we want on click a button
+          -->
+          GID:<br>
+          <input type="text" id="form-parks-gid" name = "gid" size="100" value="1"><br>
+          NOMBRE:<br>
+          <textarea rows="2" cols="100" id="form-parks-nombre" name="nombre"> Jardin del Turia</textarea><br>
+          DESCRIPCIÓN:<br>
+          <textarea rows="2" cols="100" id="form-parks-descripcion" name="descripcion"> Infraestructura verde de Valencia </textarea><br>
+          GEOMETRIA WKT:<br>
+          <textarea rows="2" cols="100" id="form-parks-geomWkt" name="geomWkt"> POINT(724819 4373318) </textarea><br>
+
+          <pre id="form-parks-message">Message: </pre>
+          <div class="form-parks-button-container">
+            <button id="button-parks-insert">Insert</button>
+            <button id="button-parks-update">Update</button>
+            <button id="button-parks-delete">Delete</button>
+            <button id="button-parks-select">Select</button>
+          </div>
+        </form>
+
+        <div id="map"></div>
+        <p>Alumno: Juan Ramon Valencia Alzate</p>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
