@@ -6,14 +6,14 @@ export default {
   },
   server: {
     cors: {
-      origin: "http://37.187.181.98"
+      origin: "https://37.187.181.98"
     },    
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     proxy: {
       "/juavaal2-api": {
-        target: "http://37.187.181.98",
+        target: "https://37.187.181.98",
         changeOrigin: false,
         secure: false,
         rewrite: (path) => path.replace(/^\/juavaal2-api/, ""),
@@ -22,7 +22,7 @@ export default {
   },
   preview:{
     cors: {
-        origin: "http://37.187.181.98"
+        origin: "https://37.187.181.98"
     },  
     headers: {
       "Access-Control-Allow-Origin": "*",
