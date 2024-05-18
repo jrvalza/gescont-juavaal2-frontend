@@ -16,7 +16,7 @@ export default {
         target: "http://localhost:8803",
         changeOrigin: false,
         secure: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/juavaal2-api/, ""),
       },
     },
   },
