@@ -18,11 +18,9 @@ export function stinsert(){
             let jsonOutput = JSON.stringify(response.data, undefined, 2);
             document.getElementById("form-streets-message").innerHTML = jsonOutput;
         })
-        .catch(function (error, response) {
+        .catch(function (error) {
             // handle error
             console.log(error);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-streets-message").innerHTML = jsonOutput;
             
         })
         .finally(function () {

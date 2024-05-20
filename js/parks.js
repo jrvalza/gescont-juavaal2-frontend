@@ -19,9 +19,7 @@ export function painsert(){
         })
         .catch(function (error) {
             // handle error
-            console.log(error, response);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-parks-message").innerHTML = jsonOutput;
+            console.log(error);
             
         })
         .finally(function () {
