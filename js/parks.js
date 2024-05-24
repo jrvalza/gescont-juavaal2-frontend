@@ -14,12 +14,22 @@ export function painsert(){
     .then(function (response) {
     // handle success
             console.log(response);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-parks-message").innerHTML = jsonOutput;
+
+            if (!response.data.data){
+                document.getElementById("form-parks-message").innerHTML = response.data.message;
+            }
+            else if (response.data.data.length == 0){
+                document.getElementById("form-parks-message").innerHTML= response.data.message;
+            }
+            else if (response.data.data.length == 1){
+                let jsonOutput = JSON.stringify(response.data, undefined, 2);
+                document.getElementById("form-parks-message").innerHTML = jsonOutput;
+            }
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            document.getElementById("form-parks-message").innerHTML=error.message;
             
         })
         .finally(function () {
@@ -45,12 +55,22 @@ export function paupdate(){
     .then(function (response) {
     // handle success
             console.log(response);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-parks-message").innerHTML = jsonOutput;
+
+            if (!response.data.data){
+                document.getElementById("form-parks-message").innerHTML = response.data.message;
+            }
+            else if (response.data.data.length == 0){
+                document.getElementById("form-parks-message").innerHTML= response.data.message;
+            }
+            else if (response.data.data.length == 1){
+                let jsonOutput = JSON.stringify(response.data, undefined, 2);
+                document.getElementById("form-parks-message").innerHTML = jsonOutput;
+            }
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            document.getElementById("form-parks-message").innerHTML=error.message;
             
         })
         .finally(function () {
@@ -71,12 +91,26 @@ export function padelete(){
     .then(function (response) {
     // handle success
             console.log(response);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-parks-message").innerHTML = jsonOutput;
+
+            if (!response.data.data){
+                document.getElementById("form-parks-message").innerHTML = response.data.message;
+            }
+            else if (response.data.data.length == 0){
+                document.getElementById("form-parks-message").innerHTML= response.data.message;
+            }
+            else if (response.data.data.length == 1){
+                document.getElementById('form-parks-gid').value = '';
+                document.getElementById('form-parks-nombre').value = '';
+                document.getElementById('form-parks-descripcion').value = '';
+                document.getElementById('form-parks-geomWkt').value = '';
+                let jsonOutput = JSON.stringify(response.data, undefined, 2);
+                document.getElementById("form-parks-message").innerHTML = jsonOutput;
+            }
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            document.getElementById("form-parks-message").innerHTML=error.message;
             
         })
         .finally(function () {
@@ -95,12 +129,42 @@ export function paselect(){
     .then(function (response) {
     // handle success
             console.log(response);
-            let jsonOutput = JSON.stringify(response.data, undefined, 2);
-            document.getElementById("form-parks-message").innerHTML = jsonOutput;
+
+            //count the response objects
+            let dataCount = 0;
+            for (let item of response.data.data) {
+                    dataCount++;
+                }
+
+            if (response.data.data.length == 0) {
+                document.getElementById('form-parks-nombre').value = '';
+                document.getElementById('form-parks-descripcion').value = '';
+                document.getElementById('form-parks-geomWkt').value = '';
+                document.getElementById("form-parks-message").innerHTML= response.data.message;
+            }
+
+            else if (dataCount == 1){
+                document.getElementById('form-parks-gid').value = response.data.data[0].gid;
+                document.getElementById('form-parks-nombre').value = response.data.data[0].nombre;
+                document.getElementById('form-parks-descripcion').value = response.data.data[0].descripcion;
+                document.getElementById('form-parks-geomWkt').value = response.data.data[0].geometry_text;
+                document.getElementById("form-parks-message").innerHTML= response.data.message;
+            }
+
+            else if (dataCount > 1){
+                document.getElementById('form-parks-nombre').value = '';
+                document.getElementById('form-parks-descripcion').value = '';
+                document.getElementById('form-parks-geomWkt').value = '';
+                let jsonOutput = JSON.stringify(response.data, undefined, 2);
+                document.getElementById("form-parks-message").innerHTML = jsonOutput;
+
+            }
+
         })
         .catch(function (error) {
             // handle error
             console.log(error);
+            document.getElementById("form-parks-message").innerHTML=error.message;
             
         })
         .finally(function () {
