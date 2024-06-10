@@ -4,7 +4,7 @@
 * @param {str} divName - string with the id of the div that contains all the divs to hide
 * @return none
 */
-function libs_general_hideAllDivsInDiv(divName) {
+export function libs_general_hideAllDivsInDiv(divName) {
 	var selector="#" + divName + ">div"//select all divs wich the parent is divname (only the first level)
     var divs= document.querySelectorAll(selector);
 	var div;
@@ -23,7 +23,7 @@ function libs_general_hideAllDivsInDiv(divName) {
 * @param {str} divName - string with the id of the div in the divParentName to show
 * @return none
 */
-function libs_general_hideAllDivsInDivExceptOne(divParentName, divName, divName2, divName3) {
+export function libs_general_hideAllDivsInDivExceptOne(divParentName, divName, divName2, divName3) {
 	libs_general_hideAllDivsInDiv(divParentName);
 	var selector="#" + divName;
 	var div= document.querySelector(selector);//selects only one

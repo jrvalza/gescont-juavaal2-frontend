@@ -1,9 +1,11 @@
 
 import { logout } from '../login.js';
+import { libs_general_hideAllDivsInDivExceptOne } from './general.js';
 
 /**
 * This file starts all the Javascript functionality
 */
+
 
 function showDivHome(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-home") 
