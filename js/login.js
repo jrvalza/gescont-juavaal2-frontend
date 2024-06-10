@@ -16,6 +16,7 @@ export function login(){
         // handle success
                 console.log(response);
                 document.getElementById("form-login-message").innerHTML=response.data.message;
+                document.getElementById("user-login").innerHTML= response.data.message;;
             })
             .catch(function (error) {
                 // handle error
@@ -34,6 +35,8 @@ export function logout(){
         // handle success
                 console.log(response);
                 document.getElementById("form-login-message").innerHTML=response.data.message;
+                document.getElementById("form-login-message2").innerHTML= response.data.message;
+                document.getElementById("user-login").innerHTML= '';
             })
             .catch(function (error) {
                 // handle error

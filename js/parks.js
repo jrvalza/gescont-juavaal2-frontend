@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { URL_API } from './settings';
+
+import { MAP_MAIN, URL_API } from './settings';
 
 
 
@@ -171,4 +172,39 @@ export function paselect(){
             // always executed
             console.log('Finally')
     });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*PARA DIBUJAR*/
+
+export function startDrawingParks(){
+    //Enables de draw interaction
+    MAP_MAIN.startDrawingParks();
+    document.getElementById("map-message-parks").innerHTML="Draw point interaction active"
+}
+
+export function stopDrawingParks(){
+    //Enables de draw interaction
+    MAP_MAIN.stopDrawingParks();
+    document.getElementById("map-message-parks").innerHTML="Draw point interaction inactive";
+}
+
+export function reloadWMSParksLayer(){
+    MAP_MAIN.reloadWMSParksLayer();
+    document.getElementById("map-message-parks").innerHTML="WMS Parks reloaded"
+}
+
+export function clearVectorParksLayer(){
+    MAP_MAIN.clearVectorParksLayer();
+    document.getElementById("map-message-parks").innerHTML="Vector Parks layer cleared"
 }

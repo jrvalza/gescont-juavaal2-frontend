@@ -5,127 +5,298 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web develop</title>
-    <script type="module" crossorigin src="/website-juavaal2/assets/index-C6Xj36qU.js"></script>
-    <link rel="stylesheet" crossorigin href="/website-juavaal2/assets/index-DUdeEU2L.css">
+
+
+    <!----------------------Bootstrap---------------------->
+    <script type="text/javascript" src="js/libs/general.js"></script>
+
+    <script type="module" crossorigin src="/website-juavaal2/assets/index-4m1PrEZ-.js"></script>
+    <link rel="stylesheet" crossorigin href="/website-juavaal2/assets/index-BkD4a-h9.css">
   </head>
+
   <body>
-    <div class="container-exterior">
-      <div class="container-interior">
 
-        <form id="form-login" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a form button
-          This is necessary because we want on click a button
-           -->
-          <p>Please provide your credentials:</p>
-          
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required minlength="4" maxlength="50" size="50" value="admin">
-          <br>
+    <!--------NAV BAR--------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="menu-home">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="menu-map">Map</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="menu-f3">F3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="menu-help">Help</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" id="menu-about">About</a>
+              </li>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required minlength="4" maxlength="50" size="50" value="admin">
-          <br>
-          
-          <p id="form-login-message"></p>
-          <br><br>
-          <div class="form-login-button-container">
-            <button id="button-login">Login</button>
-            <button id="button-logout">Logout</button>
+          </ul>
+          <form class="d-flex">
+              <a aria-current="page" style="margin-right: 10px;" id="user-login"></a>
+              <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjE5MjBGRTQ0ODUzQTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjE5MjBGRTQzODUzQTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Inw3BQAAAKRJREFUeNpi+P//PwM6BoIAIH4AxP9JxCA9AWAzcBj6n0IcgM1gmEsXYPMNPgzSA3M5I1QADhgZGcECQHFGBjIATD8TEQo3ALEAyTYQ4T1YpBgQGRyQcCZaIQPDByBOIEE9WAMpMd5ArMHkJKcJhAxmYqAhIDUoCmgReQHUThWUJzeYBBJ/AxALkJCtwfrpmqUfQhUsIMPQBXAz6FZsUqugBwgwACiDNrDWvOy+AAAAAElFTkSuQmCC" id="menu-login" data-bs-toggle="tooltip" data-bs-placement="top" title="Login"></a>
+              <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAASCAYAAAC0EpUuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJDRUQ3RUQ3ODUzQTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJDRUQ3RUQ2ODUzQTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+gGQuuQAAAKVJREFUeNpi+P//PwMQBADxAyD+TyIG6QkAmYGMYQb+pxAHoBsKc+ECdBsJYSBIgOp/gG4o2DZSDUQyQACIN1DNUJBhIEOxhSklhsIiy4DahoLwB+TIwmsoVDEpqaABpI8RygEZwsiABhgZGf8zkA4mMjHQCFDT+wUDE1EDlaSon/iRsukBZDFQ7D+EJp8FpMYwUA+oQLkAxAroctQv+mhRSAMEGACYQYo764qifQAAAABJRU5ErkJggg==" id="menu-logout" data-bs-toggle="tooltip" data-bs-placement="top" title="Logout"></a>
+          </form>
           </div>
-        </form>
-
-
-        <hr>
-
-
-        <h3>Tabla People</h3>
-        <form id="form-people" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a
-          form button
-          This is necessary because we want on click a button
-          -->
-          DNI:<br>
-          <input type="text" id="form-people-dni" name = "dni" size="100" value="100"><br>
-          NOMBRE:<br>
-          <textarea rows="2" cols="100" id="form-people-nombre" name="nombre"> Juan </textarea><br>
-          APELLIDO:<br>
-          <textarea rows="2" cols="100" id="form-people-apellido" name="apellido"> Valencia </textarea><br>
-          PROFESION:<br>
-          <textarea rows="2" cols="100" id="form-people-profesion" name="profesion"> Topografo </textarea><br>
-          CIUDAD:<br>
-          <textarea rows="2" cols="100" id="form-people-ciudad" name="apellido"> Valencia </textarea><br>
-
-
-          <pre id="form-people-message">Message: </pre>
-          <div class="form-people-button-container">
-            <button id="button-people-insert">Insert</button>
-            <button id="button-people-update">Update</button>
-            <button id="button-people-delete">Delete</button>
-            <button id="button-people-select">Select</button>
-          </div>
-        </form>
-
-
-        <hr>
-
-
-        <h3>Tabla Streets</h3>
-        <form id="form-streets" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a
-          form button
-          This is necessary because we want on click a button
-          -->
-          GID:<br>
-          <input type="text" id="form-streets-gid" name = "gid" size="100" value="1"><br>
-          NOMBRE:<br>
-          <textarea rows="2" cols="100" id="form-streets-nombre" name="nombre"> Viver </textarea><br>
-          TIPO:<br>
-          <textarea rows="2" cols="100" id="form-streets-tipo" name="tipo"> Calle </textarea><br>
-          NÚMERO DE CARRILES:<br>
-          <textarea rows="2" cols="100" id="form-streets-ncarril" name="ncarril"> 2 </textarea><br>
-          GEOMETRIA WKT:<br>
-          <textarea rows="2" cols="100" id="form-streets-geomWkt" name="geomWkt"> LINESTRING(10 10, 1000 1000) </textarea><br>
-
-          <pre id="form-streets-message">Message: </pre>
-          <div class="form-streets-button-container">
-            <button id="button-streets-insert">Insert</button>
-            <button id="button-streets-update">Update</button>
-            <button id="button-streets-delete">Delete</button>
-            <button id="button-streets-select">Select</button>
-          </div>
-        </form>
-        
-        
-        <hr>
-
-
-        <h3>Tabla Parks</h3>
-        <form id="form-parks" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a
-          form button
-          This is necessary because we want on click a button
-          -->
-          GID:<br>
-          <input type="text" id="form-parks-gid" name = "gid" size="100" value="1"><br>
-          NOMBRE:<br>
-          <textarea rows="2" cols="100" id="form-parks-nombre" name="nombre"> Jardin del Turia</textarea><br>
-          DESCRIPCIÓN:<br>
-          <textarea rows="2" cols="100" id="form-parks-descripcion" name="descripcion"> Infraestructura verde de Valencia </textarea><br>
-          GEOMETRIA WKT:<br>
-          <textarea rows="2" cols="100" id="form-parks-geomWkt" name="geomWkt"> POINT(724819 4373318) </textarea><br>
-
-          <pre id="form-parks-message">Message: </pre>
-          <div class="form-parks-button-container">
-            <button id="button-parks-insert">Insert</button>
-            <button id="button-parks-update">Update</button>
-            <button id="button-parks-delete">Delete</button>
-            <button id="button-parks-select">Select</button>
-          </div>
-        </form>
-
-        <div id="map"></div>
-        <p>Alumno: Juan Ramon Valencia Alzate</p>
       </div>
-    </div>
+    </nav>
+    <!---------FIN NAVBAR---------->
+
+    <div class="container-exterior">
+      <div id="div-main" class="container-fluid">
+        
+        <div id="div-login">
+          <div class="row text-center">
+            <h1>Authentication</h1>
+          </div>
+          <div class= "row  justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              
+              <form id="form-login" onsubmit="event.preventDefault();">
+                <p>Please provide your credentials:</p>
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required minlength="4" maxlength="50" size="50" value="admin">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="4" maxlength="50" size="50" value="admin">
+                <br>
+                <p id="form-login-message"></p>
+                <br>
+                <div class="form-login-button-container">
+                  <button id="button-login">Login</button>
+                  <button id="button-logout">Logout</button>
+                </div>
+              </form>
+
+            </div><!--col-->
+          </div><!--row-->
+          <br>
+        </div><!--div-login-->
+
+
+        <div id="div-logout">
+          <div class="row text-center">
+            <h1>Authentication</h1>
+          </div>
+          <div class= "row  justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              <br>
+              <p id="form-login-message2"></p>
+              <br>
+            </div><!--col-->
+          </div><!--row-->
+          <br>
+        </div><!--div-logout-->
+        
+        <br>
+        
+        <div id="div-f3">
+          <div class="row text-center">
+            <h1>Tabla people</h1>
+          </div>
+          <div class="row  justify-content-center" id="div-form-people">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              <form id="form-people" onsubmit="event.preventDefault();">
+                DNI:<br>
+                <input type="text" size="50" id="form-people-dni" name = "dni" value="100"><br>
+                NOMBRE:<br>
+                <textarea rows="2" cols="50" id="form-people-nombre" name="nombre"> Juan </textarea><br>
+                APELLIDO:<br>
+                <textarea rows="2" cols="50" id="form-people-apellido" name="apellido"> Valencia </textarea><br>
+                PROFESION:<br>
+                <textarea rows="2" cols="50" id="form-people-profesion" name="profesion"> Topografo </textarea><br>
+                CIUDAD:<br>
+                <textarea rows="2" cols="50" id="form-people-ciudad" name="apellido"> Valencia </textarea><br>
+                <pre id="form-people-message">Message: </pre>
+                <div class="form-people-button-container">
+                  <button id="button-people-insert">Insert</button>
+                  <button id="button-people-update">Update</button>
+                  <button id="button-people-delete">Delete</button>
+                  <button id="button-people-select">Select</button>
+                </div>
+              </form>
+              <br>
+            </div><!--col-->
+          </div><!--row-->
+        </div><!--div-people-->
+
+        <br>
+
+        <div id="div-map">
+          <div id="map"></div>
+          <div class= "row  justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              <div class="opcion-dibujo-container">
+                <h1>Seleccione una acción</h1>
+                <ul>
+                  <li><input type="checkbox" id="check_streets" name="check_streets" value="streets"> Interacción con Streets</li>
+                  <li><input type="checkbox" id="check_parks" name="check_parks" value="parks"> Interacción con Parks</li>
+                  <li><input type="checkbox" id="check_selectXY" name="check_selectXY" value="selectXY"> Seleccionar Streets en el mapa</li>
+                </ul>
+              </div>
+              <br>
+              <!--
+              <pre id="map-message">Message: </pre>
+              <div class="form-map-button-container">
+                <button id="button-map-start-drawing">Start drawing</button>
+                <button id="button-map-stop-drawing">Stop drawing</button>
+                <button id="button-map-clear">Clear map</button>
+                <button id="button-map-reload">Reload map</button>
+              </div>
+              -->
+            </div><!--col-->
+          </div><!--row-->
+        </div><!--div-map-->
+
+        <div id="div-parks">
+          <div class="row text-center">
+            
+            <pre id="map-message-parks">Message: </pre>
+            <div class="form-map-button-container-parks">
+              <button id="button-map-start-drawing-parks">Start drawing</button>
+              <button id="button-map-stop-drawing-parks">Stop drawing</button>
+              <button id="button-map-clear-parks">Clear map</button>
+              <button id="button-map-reload-parks">Reload map</button>
+            </div>
+            <br><br>
+
+            <h1>Tabla parks</h1>
+          </div>
+          <div class="row  justify-content-center" id="div-form-parks">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              <form id="form-parks" onsubmit="event.preventDefault();">
+                GID:<br>
+                <input type="text" size="50" id="form-parks-gid" name = "gid" value="1"><br>
+                NOMBRE:<br>
+                <textarea rows="2" cols="50" id="form-parks-nombre" name="nombre"> Jardin del Turia</textarea><br>
+                DESCRIPCIÓN:<br>
+                <textarea rows="2" cols="50" id="form-parks-descripcion" name="descripcion"> Infraestructura verde de Valencia </textarea><br>
+                GEOMETRIA WKT:<br>
+                <textarea rows="2" cols="50" id="form-parks-geomWkt" name="geomWkt"> POINT(724819 4373318) </textarea><br>
+
+                <pre id="form-parks-message">Message: </pre>
+                <div class="form-parks-button-container">
+                  <button id="button-parks-insert">Insert</button>
+                  <button id="button-parks-update">Update</button>
+                  <button id="button-parks-delete">Delete</button>
+                  <button id="button-parks-select">Select</button>
+                </div>
+              </form>
+            </div><!--col-->
+          </div><!--row-->
+        </div><!--div-map-parks-->
+
+        <div id="div-button-drawing-streets">
+          <div class="row text-center">
+            <div class="row  justify-content-center" id="div-form-streets">
+              <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+                <pre id="map-message-streets">Message: </pre>
+                <div class="form-map-button-container-streets">
+                  <button id="button-map-start-drawing-streets">Start drawing</button>
+                  <button id="button-map-stop-drawing-streets">Stop drawing</button>
+                  <button id="button-map-clear-streets">Clear map</button>
+                  <button id="button-map-reload-streets">Reload map</button>
+                </div>
+              </div><!--col-->
+            </div><!--row justify-->
+          </div><!--row center-->
+          <br><br>
+        </div>
+
+        <div id="div-streets">
+          <div class="row text-center">
+            
+            <h1>Tabla streets</h1>
+          </div>
+          <div class="row  justify-content-center" id="div-form-streets">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-4">
+              <form id="form-streets" onsubmit="event.preventDefault();">
+                <!-- Prevent default avoids the form be sent on pressing a
+                form button
+                This is necessary because we want on click a button
+                -->
+                GID:<br>
+                <input type="text" size="50" id="form-streets-gid" name = "gid" value="1"><br>
+                NOMBRE:<br>
+                <textarea rows="2" cols="50" id="form-streets-nombre" name="nombre"> Viver </textarea><br>
+                TIPO:<br>
+                <textarea rows="2" cols="50" id="form-streets-tipo" name="tipo"> Calle </textarea><br>
+                NÚMERO DE CARRILES:<br>
+                <textarea rows="2" cols="50" id="form-streets-ncarril" name="ncarril"> 2 </textarea><br>
+                GEOMETRIA WKT:<br>
+                <textarea rows="2" cols="50" id="form-streets-geomWkt" name="geomWkt"> LINESTRING(10 10, 1000 1000) </textarea><br>
+      
+                <pre id="form-streets-message">Message: </pre>
+                <div class="form-streets-button-container">
+                  <button id="button-streets-insert">Insert</button>
+                  <button id="button-streets-update">Update</button>
+                  <button id="button-streets-delete">Delete</button>
+                  <button id="button-streets-select">Select</button>
+                </div>
+              </form>
+            </div><!--col-->
+          </div><!--row-->
+        </div><!--div-streets-->
+
+        <br>
+
+        <div id="div-home">
+          <div class="row text-center">
+            <h1>Home</h1>
+            <a href="#"><img src="/assets/home-CAGPkWrs.jpg"></a>
+            <div class="container-parrafo">
+              <p>Bienvenido a nuestra página de inicio. Aquí encontrarás un resumen de las secciones más importantes de nuestro sitio web, 
+              facilitando el acceso a la información y servicios que ofrecemos. Si necesitas ayuda para navegar o encontrar algo específico, 
+              consulta nuestra sección de ayuda. Estamos aquí para garantizar que tu experiencia en nuestro sitio sea fluida y satisfactoria.
+              </p>
+              </div>
+          </div>
+        </div>
+
+        
+        <div id="div-help">
+          <div class="row text-center">
+            <a href="#"><img src="/assets/help-BSWNX4io.jpg"></a>
+            <h6>Alumno: Juan Ramon Valencia Alzate</h6>
+            <br><hr>
+            <div class="container-parrafo">
+              <p>Si necesitas asistencia mientras navegas por nuestro sitio web, 
+              estamos aquí para ayudarte. En esta sección de ayuda, encontrarás respuestas a preguntas frecuentes, 
+              guías paso a paso y recursos adicionales que te facilitarán el uso de nuestras funcionalidades. 
+              Si no encuentras la información que buscas, no dudes en contactarnos a través de nuestro formulario 
+              de soporte o nuestro servicio de chat en vivo.
+              Nuestro equipo de atención al cliente está disponible para ofrecerte el soporte necesario y asegurarte una experiencia de usuario óptima.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div id="div-about">
+          <div class="row text-center">
+            <h1>About</h1><br>
+            <div class="container-parrafo">
+              <h2>Proyecto de desarrollo web y geoportales</h2>
+              <br><hr>
+              <h6>Alumno: Juan Ramon Valencia Alzate</h6>
+              <br>
+              <h6>curso: 2023/2024</h6>
+            </div>
+          </div>
+        </div>
+
+      
+      </div><!--div-main--> 
+    </div><!--div-container-exterior--> 
+    <script src="js/externalLibs/bootstrap5/bootstrap.bundle.min.js"></script>
   </body>
 </html>
