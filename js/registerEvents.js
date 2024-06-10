@@ -1,10 +1,10 @@
 
 import { MAP_MAIN} from './settings';
-import {login, logout} from './login';
-import {pinsert, pupdate, pdelete, pselect} from './people';
-import {st_coords_select, stinsert, stupdate, stdelete, stselect, startDrawingStreets, stopDrawingStreets, clearVectorStreetsLayer, reloadWMSStreetsLayer} from './streets';
-import {painsert, paupdate, padelete, paselect, startDrawingParks, stopDrawingParks, reloadWMSParksLayer, clearVectorParksLayer} from './parks';
-import { singleClick } from 'ol/events/condition';
+import { login, logout} from './login';
+import { pinsert, pupdate, pdelete, pselect} from './people';
+import { stinsert, stupdate, stdelete, stselect, startDrawingStreets, stopDrawingStreets, clearVectorStreetsLayer, reloadWMSStreetsLayer} from './streets';
+import { painsert, paupdate, padelete, paselect, startDrawingParks, stopDrawingParks, reloadWMSParksLayer, clearVectorParksLayer} from './parks';
+import { libs_general_hideAllDivsInDivExceptOne } from './libs/general';
 
 
 export function registerEvents(){
